@@ -5,7 +5,7 @@ Master 1 Informatique
 
 ---
 
-## 🎯 Objectif du projet
+## Objectif du projet
 
 Ce projet a pour objectif de développer une application interactive d’analyse de corpus textuels couvrant plusieurs travaux dirigés (TD6 à TD10).
 
@@ -20,9 +20,9 @@ L’interface est réalisée avec **Streamlit**, afin de proposer une visualisat
 
 ---
 
-## 🧩 Contenu fonctionnel
+## Contenu fonctionnel
 
-### 🗳️ Module 1 — Discours politiques
+### Module 1 — Discours politiques
 
 - Chargement d’un fichier CSV (`discours_US.csv`)
 - Sélection de deux *speakers*
@@ -36,7 +36,7 @@ L’interface est réalisée avec **Streamlit**, afin de proposer une visualisat
 
 ---
 
-### 🌐 Module 2 — Reddit / ArXiv
+### Module 2 — Reddit / ArXiv
 
 - Chargement dynamique de corpus thématiques
 - Exploration à travers plusieurs vues :
@@ -52,7 +52,7 @@ L’interface est réalisée avec **Streamlit**, afin de proposer une visualisat
 
 ---
 
-## 🧠 Concepts abordés
+## Concepts abordés
 
 - Programmation Orientée Objet (**POO**)
 - Pattern **Singleton** (classe `Corpus`)
