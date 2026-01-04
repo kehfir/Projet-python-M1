@@ -18,8 +18,6 @@ Il permet notamment :
 
 L’interface est réalisée avec **Streamlit**, afin de proposer une visualisation claire et interactive.
 
----
-
 ## Contenu fonctionnel
 
 ### Module 1 — Discours politiques
@@ -33,8 +31,6 @@ L’interface est réalisée avec **Streamlit**, afin de proposer une visualisat
 - Visualisations :
   - tableaux de mots discriminants
   - graphiques TF-IDF
-
----
 
 ### Module 2 — Reddit / ArXiv
 
@@ -50,8 +46,6 @@ L’interface est réalisée avec **Streamlit**, afin de proposer une visualisat
   - nombre total de documents
   - répartition entre **Reddit** et **ArXiv**
 
----
-
 ## Concepts abordés
 
 - Programmation Orientée Objet (**POO**)
@@ -65,4 +59,3 @@ L’interface est réalisée avec **Streamlit**, afin de proposer une visualisat
 - API **ArXiv**
 - Visualisation interactive avec **Streamlit**
 
----
