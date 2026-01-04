@@ -166,6 +166,5 @@ class Corpus:
 
         return vocab
 
-
     def __repr__(self):
         return f"Corpus {self.nom} - {self.taille()} documents"
