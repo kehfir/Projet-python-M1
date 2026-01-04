@@ -54,7 +54,7 @@ class Corpus:
         df = pd.read_csv(path, sep="\t")
         return df
 
-    # TD6 – Chaîne globale
+    # Chaîne globale
     def build_global_text(self):
         if not hasattr(self, "global_text"):
             self.global_text = " ".join(
@@ -62,13 +62,13 @@ class Corpus:
             ).lower()
         return self.global_text
 
-      # TD6 – Recherche regex
+      # Recherche regex
     def search(self, keyword):
         text = self.build_global_text()
         pattern = re.compile(keyword.lower())
         return [m.group() for m in pattern.finditer(text)]
 
-    # TD6 – Concordancier
+    # Concordancier
     def concorde(self, keyword, context=30):
         text = self.build_global_text()
         results = []
