@@ -8,9 +8,6 @@ from Document import RedditDocument, ArxivDocument
 from SearchEngine import SearchEngine
 
 
-# ======================
-# Reddit credentials
-# ======================
 reddit = praw.Reddit(
     client_id='d1Tw8tp5olTmdil0VRXG7g',
     client_secret='RtB3x3GBthG57qgUQrnI0Al6bKkWkw',
@@ -22,7 +19,7 @@ BASE_URL = "http://export.arxiv.org/api/query?"
 def build_corpus(theme):
     corpus = Corpus(f"Corpus_{theme}")
 
-    # -------- Reddit --------
+    # Reddit
     subreddit = reddit.subreddit(theme)
     for post in subreddit.hot(limit=10):
         texte = post.selftext.replace("\n", " ")
@@ -36,7 +33,7 @@ def build_corpus(theme):
         )
         corpus.add_document(doc)
 
-    # -------- Arxiv --------
+    # Arxiv
     query = f"{BASE_URL}search_query=all:{theme}&start=0&max_results=5"
     with urllib.request.urlopen(query) as url:
         data = xmltodict.parse(url.read())
@@ -60,7 +57,6 @@ def build_corpus(theme):
 
     return corpus
 
-
 if __name__ == "__main__":
     corpus = build_corpus("football")
 
@@ -80,7 +76,7 @@ if __name__ == "__main__":
         print(author)
         print("  Taille moyenne :", author.taille_moyenne())
 
-    # Tests statistiques (TD3)
+    # Tests statistiques
     for doc in corpus.documents.values():
         mots = len(doc.texte.split(" "))
         phrases = len(doc.texte.split("."))
@@ -98,34 +94,34 @@ if __name__ == "__main__":
     # Sauvegarde
     corpus.save_csv("data/corpus.csv")
 
-print("\n=== TEST : chargement CSV ===")
+print("\nchargement CSV")
 df = corpus.load_csv("data/corpus.csv")
 print(df.head())
 
 
-print("\n=== TD6 : SEARCH ===")
+print("\nSEARCH")
 print(corpus.search("football")[:5])
 
-print("\n=== TD6 : CONCORDE ===")
+print("\nCONCORDE")
 print(corpus.concorde("football", 20).head())
 
-print("\n=== TD6 : STATS ===")
+print("\nSTATS")
 freq_df = corpus.stats(10)
 
 
-print("\n=== TD7 : SEARCH ENGINE ===")
+print("\nSEARCH ENGINE")
 engine = SearchEngine(corpus)
 
 resultats = engine.search("football analytics", 5)
 print(resultats)
 
-print("\n=== TF / DF pour quelques mots  terme frequency et docuement freauency ===")
-
-'''for mot in ["football", "team", "match","maroc"]:
+'''
+print("\n TF / DF pour quelques mots  terme frequency et docuement freauency")
+for mot in ["football", "team", "match","maroc"]:
     if mot in engine.vocab:
         info = engine.vocab[mot]
         print(f"{mot:10s} | TF={info['tf']:6.2f} | DF={info['df']:6.2f}")
-
+        
 '''
 
 print("\n=== VOCABULAIRE TF / DF ===")
