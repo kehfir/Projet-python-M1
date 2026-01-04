@@ -1,7 +1,6 @@
 # 📚 Analyse et Exploration de Corpus Textuels
 
-**Kehailou Firdaouss**  
-Master 1 Informatique
+**Kehailou Firdaouss** -- Master 1 Informatique
 
 ---
 
